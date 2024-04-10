@@ -2,10 +2,14 @@ import 'package:femalert2/base/cards/card.with.background.image.dart';
 import 'package:femalert2/base/cards/tools.card.dart';
 import 'package:femalert2/screens/tools/defensetools.dart';
 import 'package:femalert2/screens/tools/safetytips.dart';
+import 'package:femalert2/screens/tools/youtube.dart';
 import 'package:flutter/material.dart';
 
 class ToolsPage extends StatefulWidget {
-  const ToolsPage({super.key});
+  const ToolsPage();
+  
+
+
 
   @override
   State<ToolsPage> createState() => _ToolsPageState();
@@ -21,9 +25,9 @@ class _ToolsPageState extends State<ToolsPage> {
             const Padding(
               padding: EdgeInsets.all(15.0),
               child: CardWithBackgroundImage(
-                description: "safe women",
+                description: " ",
                 imagePath: "assets/images/banner.png",
-                title: 'Safety Tips',
+                title: '',
               ),
             ),
             GridView.count(
@@ -38,11 +42,20 @@ class _ToolsPageState extends State<ToolsPage> {
                   child: SizedBox(
                     height: 50,
                     width: 50,
-                    child: ToolsCard(
-                        imageurl: 'assets/images/Courage.png',
-                        title: "Self Defense"),
-                  ),
-                ),
+                    child: GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => YouTubeVideosScreen()),
+        );
+      },
+      child: ToolsCard(
+        imageurl: 'assets/images/Courage.png',
+        title: "Self Defense",
+      ),
+    ),
+ ),
+),
                 Padding(
  padding: const EdgeInsets.all(8.0),
  child: SizedBox(
@@ -90,14 +103,14 @@ class _ToolsPageState extends State<ToolsPage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Upgrade to Premium"),
-            content: Text("Upgrade to premium to use this feature"),
+            title: const Text("Upgrade to Premium"),
+            content: const Text("Upgrade to premium to use this feature"),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("OK"),
+                child: const Text("OK"),
               ),
             ],
           );
@@ -123,14 +136,14 @@ class _ToolsPageState extends State<ToolsPage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Premium"),
-            content: Text("Upgrade to premium to use this feature"),
+            title: const Text("Premium"),
+            content: const Text("Upgrade to premium to use this feature"),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("OK"),
+                child: const Text("OK"),
               ),
             ],
           );
@@ -156,14 +169,14 @@ class _ToolsPageState extends State<ToolsPage> {
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text("Upgrade to Premium"),
-            content: Text("Upgrade to premium to use this feature"),
+            title: const Text("Upgrade to Premium"),
+            content: const Text("Upgrade to premium to use this feature"),
             actions: [
               TextButton(
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("OK"),
+                child: const Text("OK"),
               ),
             ],
           );

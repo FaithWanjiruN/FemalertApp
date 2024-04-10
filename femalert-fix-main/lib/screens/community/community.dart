@@ -20,8 +20,8 @@ class _CommunityPageState extends State<CommunityPage> with SingleTickerProvider
     // Add some demo posts to the 'Timeline'
     _timelinePosts.addAll([
       {'text': 'Hello, world!', 'time': DateTime.now()},
-      {'text': 'How are you?', 'time': DateTime.now().subtract(Duration(hours: 1))},
-      {'text': 'Nice to meet you!', 'time': DateTime.now().subtract(Duration(hours: 2))},
+      {'text': 'How are you?', 'time': DateTime.now().subtract(const Duration(hours: 1))},
+      {'text': 'Nice to meet you!', 'time': DateTime.now().subtract(const Duration(hours: 2))},
     ]);
  }
 
@@ -66,11 +66,11 @@ void dispose() {
                  itemBuilder: (BuildContext context, int index) {
                     return Card(
                       child: ListTile(
-                        leading: Icon(Icons.person, size: 40), // User icon
+                        leading: const Icon(Icons.person, size: 40), // User icon
                         title: Text(_myPosts[index]['text']),
                         subtitle: Text(
                           'Posted at: ${_myPosts[index]['time'].toString()}', // Display the time
-                          style: TextStyle(fontSize: 12),
+                          style: const TextStyle(fontSize: 12),
                         ),
                       ),
                     );
@@ -108,11 +108,11 @@ void dispose() {
             itemBuilder: (BuildContext context, int index) {
               return Card(
                 child: ListTile(
-                 leading: Icon(Icons.person, size: 40), // User icon
+                 leading: const Icon(Icons.person, size: 40), // User icon
                  title: Text(_timelinePosts[index]['text']),
                  subtitle: Text(
                     'Posted at: ${_timelinePosts[index]['time'].toString()}', // Display the time
-                    style: TextStyle(fontSize: 12),
+                    style: const TextStyle(fontSize: 12),
                  ),
                 ),
               );

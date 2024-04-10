@@ -71,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       print("Created New Account");
                     }
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const HomeScreen()));
+                        MaterialPageRoute(builder: (context) =>  HomeScreen()));
                   }).onError((error, stackTrace) {
                     if (kDebugMode) {
                       print("Error ${error.toString()}");

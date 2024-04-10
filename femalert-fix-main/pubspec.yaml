@@ -8,6 +8,8 @@ dependencies:
   flutter:
     sdk: flutter
   font_awesome_flutter: ^10.7.0
+  youtube_player_flutter: ^8.0.0 
+  audioplayers: ^0.20.1
   flutter_inappwebview: ^5.3.2
   cupertino_icons: ^1.0.6
   provider: ^6.1.2
@@ -31,6 +33,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/images/
+    - assets/sirenn.wav
   fonts:
     - family: PoppinsS
       fonts:

@@ -9,10 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import '../home/contacts.dart';
 import '../home/profile.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+  final AudioPlayer _audioPlayer = AudioPlayer();
+
 
   @override
   Widget build(BuildContext context) {
@@ -57,14 +60,14 @@ class HomeScreen extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => ProfilePage(
+                                  builder: (context) => const ProfilePage(
                                     username: 'FaithWanjiru',
                                     profileImageUrl: 'assets/images/avtar.png',
                                   ),
                                 ),
                               );
                             },
-                            child: Text(
+                            child: const Text(
                               "Profile",
                               style: TextStyle(
                                 color: ColorsValue.secondary,
@@ -82,17 +85,17 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                           Column(
                             children: [
-                              Text("USIU Road ...",
+                              const Text("USIU Road ...",
                                   style: TextStyle(
                                     color: ColorsValue.h5,
                                     fontSize: 14,
                                   )),
-                              SizedBox(
+                              const SizedBox(
                                 height: 5,
                               ),
                              InkWell(
@@ -102,7 +105,7 @@ class HomeScreen extends StatelessWidget {
       MaterialPageRoute(builder: (context) => SendMessagePage()),
     );
   },
-  child: Text(
+  child: const Text(
     "Send Location",
     style: TextStyle(
       color: ColorsValue.secondary,
@@ -113,10 +116,10 @@ class HomeScreen extends StatelessWidget {
 
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Icon(
+                          const Icon(
                             Boxicons.bxs_map,
                             color: ColorsValue.secondary,
                           )
@@ -141,40 +144,41 @@ class HomeScreen extends StatelessWidget {
                 height: 20,
               ),
               Container(
-                padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                child: Material(
-                  elevation: 8,
-                  borderRadius: BorderRadius.circular(400),
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: InkWell(
-                    splashColor: Colors.black54,
-                    onTap: () async {
-                      var downloadsPath =
-                          await AndroidPathProvider.downloadsPath;
+ padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+ child: Material(
+    elevation: 8,
+    borderRadius: BorderRadius.circular(400),
+    clipBehavior: Clip.antiAliasWithSaveLayer,
+    child: InkWell(
+      splashColor: Colors.black54,
+      onTap: () async {
+        // Play the siren sound
+        final player = AudioCache();
+        player.play('femalert-fix-main/assets/images/sirenn.wav'); 
 
-                      if (kDebugMode) {
-                        print("$downloadsPath/ironman.jpeg");
-                      }
+        var downloadsPath = await AndroidPathProvider.downloadsPath;
 
-                      await SOS().shareFile("$downloadsPath/ironman.jpeg");
+        if (kDebugMode) {
+          print("$downloadsPath/ironman.jpeg");
+        }
 
-                      // SOS.sharePhotoToWhatsApp("729944070",
-                      //     "http://file:/$downloadsPath/digambar.jpeg");
+        await SOS().shareFile("$downloadsPath/ironman.jpeg");
 
-                      if (kDebugMode) {
-                        print("file:/$downloadsPath/digambar.jpeg");
-                      }
-                    },
-                    child: Ink.image(
-                      image: const AssetImage('assets/images/sos_button.png'),
-                      height: 205,
-                      width: 205,
-                      fit: BoxFit.cover,
-                      child: const Center(),
-                    ),
-                  ),
-                ),
-              ),
+        if (kDebugMode) {
+          print("file:/$downloadsPath/digambar.jpeg");
+        }
+      },
+      child: Ink.image(
+        image: const AssetImage('assets/images/sos_button.png'),
+        height: 205,
+        width: 205,
+        fit: BoxFit.cover,
+        child: const Center(),
+      ),
+    ),
+ ),
+),
+
               const SizedBox(
                 height: 20,
               ),

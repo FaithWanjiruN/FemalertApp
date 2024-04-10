@@ -32,7 +32,7 @@ class _SendMessagePageState extends State<SendMessagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Send Message'),
+        title: const Text('Send Message'),
       ),
       body: Center(
         child: Column(
@@ -44,9 +44,9 @@ class _SendMessagePageState extends State<SendMessagePage> {
                 // and send message with current location
                 // and a customized SMS message
               },
-              child: Text('Send Location'),
+              child: const Text('Send Location'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             if (_currentLocation != null)
               Text(
                 'Latitude: ${_currentLocation!.latitude}\n'
@@ -54,7 +54,7 @@ class _SendMessagePageState extends State<SendMessagePage> {
                 textAlign: TextAlign.center,
               ),
             if (_currentLocation == null)
-              Text(
+              const Text(
                 'Location not available',
                 textAlign: TextAlign.center,
               ),

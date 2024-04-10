@@ -15,7 +15,7 @@ class ProfilePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
       ),
       body: Center(
         child: Column(
@@ -25,25 +25,25 @@ class ProfilePage extends StatelessWidget {
               radius: 50,
               backgroundImage: AssetImage(profileImageUrl),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Text(
               username,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
                 showDialog(
                  context: context,
                  builder: (BuildContext context) {
                     return AlertDialog(
-                      title: Text('Edit Profile'),
+                      title: const Text('Edit Profile'),
                       content: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                           TextFormField(
                             initialValue: username,
-                            decoration: InputDecoration(labelText: 'Username'),
+                            decoration: const InputDecoration(labelText: 'Username'),
                             // Add logic to update username
                           ),
                           // Add image picker for profile picture
@@ -51,13 +51,13 @@ class ProfilePage extends StatelessWidget {
                       ),
                       actions: <Widget>[
                         TextButton(
-                          child: Text('Cancel'),
+                          child: const Text('Cancel'),
                           onPressed: () {
                             Navigator.of(context).pop();
                           },
                         ),
                         TextButton(
-                          child: Text('Save'),
+                          child: const Text('Save'),
                           onPressed: () {
                             // Add logic to save changes
                             Navigator.of(context).pop();
@@ -68,13 +68,13 @@ class ProfilePage extends StatelessWidget {
                  },
                 );
               },
-              child: Text('Edit Profile'),
+              child: const Text('Edit Profile'),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Wrap the button in a Container with a border
             Container(
               width: screenWidth, // Set the width to the screen width
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
               ),
               child: ElevatedButton(
                 onPressed: () {
@@ -83,61 +83,61 @@ class ProfilePage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => contacts()),
                  );
                 },
-                child: Text('Add Contacts'),
+                child: const Text('Add Contacts'),
                 style: ElevatedButton.styleFrom(
-                 foregroundColor: Colors.black, backgroundColor: Color.fromARGB(255, 232, 184, 241), // Splash color
+                 foregroundColor: Colors.black, backgroundColor: const Color.fromARGB(255, 232, 184, 241), // Splash color
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Wrap the button in a Container with a border
             Container(
               width: screenWidth, // Set the width to the screen width
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
               ),
               child: ElevatedButton(
                 onPressed: () {
                  // Perform log out and navigate to the login page
                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
                  );
                 },
-                child: Text('Log Out'),
+                child: const Text('Log Out'),
                 style: ElevatedButton.styleFrom(
-                 foregroundColor: Colors.black, backgroundColor:  Color.fromARGB(255, 232, 184, 241),  // Splash color
+                 foregroundColor: Colors.black, backgroundColor:  const Color.fromARGB(255, 232, 184, 241),  // Splash color
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Wrap the button in a Container with a border
             Container(
               width: screenWidth, // Set the width to the screen width
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
               ),
               child: ElevatedButton(
                 onPressed: () {
                  // Placeholder for Settings
                 },
-                child: Text('Settings'),
+                child: const Text('Settings'),
                 style: ElevatedButton.styleFrom(
-                 foregroundColor: Colors.black, backgroundColor: Color.fromARGB(255, 232, 184, 241), // Splash color
+                 foregroundColor: Colors.black, backgroundColor: const Color.fromARGB(255, 232, 184, 241), // Splash color
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             // Wrap the button in a Container with a border
             Container(
               width: screenWidth, // Set the width to the screen width
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
               ),
               child: ElevatedButton(
                 onPressed: () {
                  // Placeholder for Support
                 },
-                child: Text('Support'),
+                child: const Text('Support'),
                 style: ElevatedButton.styleFrom(
-                 foregroundColor: Colors.black, backgroundColor:  Color.fromARGB(255, 232, 184, 241),  // Splash color
+                 foregroundColor: Colors.black, backgroundColor:  const Color.fromARGB(255, 232, 184, 241),  // Splash color
                 ),
               ),
             ),

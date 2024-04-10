@@ -6,7 +6,7 @@ class SafetyTipsPage extends StatelessWidget {
  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Safety Tips'),
+        title: const Text('Safety Tips'),
       ),
       body: ListView.builder(
         itemCount: safetyTips.length,

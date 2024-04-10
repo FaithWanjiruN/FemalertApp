@@ -51,32 +51,32 @@ class _ContactsPageState extends State<contacts> {
                   _showAddFields = true;
                 });
               },
-              child: Text('Add Contacts'),
+              child: const Text('Add Contacts'),
             ),
             if (_showAddFields) ...[
-              Text(
+              const Text(
                 'Add Contact:',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               TextField(
                 controller: _nameController,
-                decoration: InputDecoration(labelText: 'Name'),
+                decoration: const InputDecoration(labelText: 'Name'),
               ),
               TextField(
                 controller: _numberController,
-                decoration: InputDecoration(labelText: 'Number'),
+                decoration: const InputDecoration(labelText: 'Number'),
                 keyboardType: TextInputType.phone,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
                   _addContact();
                 },
-                child: Text('Add'),
+                child: const Text('Add'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
             ],
-            Text(
+            const Text(
               'Contacts List:',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
@@ -92,13 +92,13 @@ class _ContactsPageState extends State<contacts> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         IconButton(
-                          icon: Icon(Icons.edit),
+                          icon: const Icon(Icons.edit),
                           onPressed: () {
                             _editContact(index);
                           },
                         ),
                         IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: const Icon(Icons.delete),
                           onPressed: () {
                             _deleteContact(index);
                           },
@@ -149,17 +149,17 @@ class _ContactsPageState extends State<contacts> {
   final result = await showDialog(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text('Edit Contact'),
+      title: const Text('Edit Contact'),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           TextField(
             controller: _nameController,
-            decoration: InputDecoration(labelText: 'Name'),
+            decoration: const InputDecoration(labelText: 'Name'),
           ),
           TextField(
             controller: _numberController,
-            decoration: InputDecoration(labelText: 'Number'),
+            decoration: const InputDecoration(labelText: 'Number'),
             keyboardType: TextInputType.phone,
           ),
         ],
@@ -169,7 +169,7 @@ class _ContactsPageState extends State<contacts> {
           onPressed: () {
             Navigator.pop(context);
           },
-          child: Text('Cancel'),
+          child: const Text('Cancel'),
         ),
         TextButton(
           onPressed: () {
@@ -182,7 +182,7 @@ class _ContactsPageState extends State<contacts> {
             });
             Navigator.pop(context, true);
           },
-          child: Text('Save'),
+          child: const Text('Save'),
         ),
       ],
     ),

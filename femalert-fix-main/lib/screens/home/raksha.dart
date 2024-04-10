@@ -15,7 +15,7 @@ class Raksha extends StatefulWidget {
 
 class _RakshaState extends State<Raksha> {
   List pages = [
-    const HomeScreen(),
+    HomeScreen(),
     const MapPage(),
     const Text("Bot"),
     const ToolsPage(),
