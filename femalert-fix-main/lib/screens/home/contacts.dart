@@ -9,8 +9,8 @@ class contacts extends StatefulWidget {
 }
 
 class _ContactsPageState extends State<contacts> {
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _numberController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _numberController = TextEditingController();
 
   List<Map<String, String>> _contacts = [];
   bool _showAddFields = false;
@@ -38,7 +38,7 @@ class _ContactsPageState extends State<contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contacts'),
+        title: const Text('Contacts'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
