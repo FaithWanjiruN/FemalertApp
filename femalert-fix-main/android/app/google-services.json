@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915816791919",
+    "project_id": "fir-a67e8",
+    "storage_bucket": "fir-a67e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915816791919:android:85b8114a4d6ecdcfa4729a",
+        "android_client_info": {
+          "package_name": "com.example.femalert2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2Oi7OKkbkc1Cbj6tG5qOvXGip03gqpew"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
