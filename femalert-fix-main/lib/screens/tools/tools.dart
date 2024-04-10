@@ -1,5 +1,7 @@
 import 'package:femalert2/base/cards/card.with.background.image.dart';
 import 'package:femalert2/base/cards/tools.card.dart';
+import 'package:femalert2/screens/tools/defensetools.dart';
+import 'package:femalert2/screens/tools/safetytips.dart';
 import 'package:flutter/material.dart';
 
 class ToolsPage extends StatefulWidget {
@@ -37,60 +39,148 @@ class _ToolsPageState extends State<ToolsPage> {
                     height: 50,
                     width: 50,
                     child: ToolsCard(
-                        imageurl: 'assets/images/Group 70.png',
-                        title: "Scan Taxi"),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 50,
-                    child: ToolsCard(
-                        imageurl: 'assets/images/Pin.png',
-                        title: "Safety Tips"),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 50,
-                    child: ToolsCard(
-                        imageurl: 'assets/images/Group 75.png',
-                        title: "Defense Tools"),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 50,
-                    child: ToolsCard(
                         imageurl: 'assets/images/Courage.png',
                         title: "Self Defense"),
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 50,
-                    child: ToolsCard(
-                        imageurl: 'assets/images/Siren.png',
-                        title: "Emergency"),
-                  ),
-                ),
+ padding: const EdgeInsets.all(8.0),
+ child: SizedBox(
+    height: 50,
+    width: 50,
+    child: GestureDetector(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => SafetyTipsPage()),
+        );
+      },
+      child: ToolsCard(
+        imageurl: 'assets/images/Pin.png',
+        title: "Safety Tips",
+      ),
+    ),
+ ),
+),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 50,
-                    width: 50,
-                    child: ToolsCard(
-                        imageurl: 'assets/images/Wearable Technology.png',
-                        title: "  Link Watch"),
-                  ),
-                )
+  padding: const EdgeInsets.all(8.0),
+  child: GestureDetector(
+    onTap: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => DefenseToolsPage()),
+      );
+    },
+    child: SizedBox(
+      height: 50,
+      width: 50,
+      child: ToolsCard(
+        imageurl: 'assets/images/Group 75.png',
+        title: "Defense Tools",
+      ),
+    ),
+  ),
+),
+
+                Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: GestureDetector(
+    onTap: () {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Upgrade to Premium"),
+            content: Text("Upgrade to premium to use this feature"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    },
+    child: SizedBox(
+      height: 50,
+      width: 50,
+      child: ToolsCard(
+        imageurl: 'assets/images/scan_taxi_icon.png',
+        title: "Scan Taxi",
+      ),
+    ),
+  ),
+),
+
+                Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: GestureDetector(
+    onTap: () {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Premium"),
+            content: Text("Upgrade to premium to use this feature"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    },
+    child: SizedBox(
+      height: 50,
+      width: 50,
+      child: ToolsCard(
+        imageurl: 'assets/images/Siren.png',
+        title: "Emergency",
+      ),
+    ),
+  ),
+),
+
+                Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: GestureDetector(
+    onTap: () {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text("Upgrade to Premium"),
+            content: Text("Upgrade to premium to use this feature"),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: Text("OK"),
+              ),
+            ],
+          );
+        },
+      );
+    },
+    child: SizedBox(
+      height: 50,
+      width: 50,
+      child: ToolsCard(
+        imageurl: 'assets/images/Wearable Technology.png',
+        title: "Link Watch",
+      ),
+    ),
+  ),
+),
+
               ],
             ),
           ],
