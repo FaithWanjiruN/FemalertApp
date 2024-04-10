@@ -7,6 +7,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import '../home/contacts.dart';
+import '../home/profile.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -52,16 +53,26 @@ class HomeScreen extends StatelessWidget {
                           ),
                           InkWell(
                             onTap: () {
-                              if (kDebugMode) {
-                                print("hello");
-                              }
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ProfilePage(
+                                    username: 'FaithWanjiru',
+                                    profileImageUrl: 'assets/images/avtar.png',
+                                  ),
+                                ),
+                              );
                             },
-                            child: const Text("Profile",
-                                style: TextStyle(
-                                  color: ColorsValue.secondary,
-                                  fontSize: 14,
-                                )),
+                            child: Text(
+                              "Profile",
+                              style: TextStyle(
+                                color: ColorsValue.secondary,
+                                fontSize: 14,
+                              ),
+                            ),
                           )
+
+
                         ],
                       )
                     ],
