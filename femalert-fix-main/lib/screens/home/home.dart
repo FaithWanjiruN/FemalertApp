@@ -1,6 +1,7 @@
 import 'package:android_path_provider/android_path_provider.dart';
 import 'package:boxicons/boxicons.dart';
 import 'package:femalert2/base/cards/helpline.cards.dart';
+import 'package:femalert2/screens/home/messages.dart';
 import 'package:femalert2/utils/colors.dart';
 import 'package:femalert2/utils/sos.dart';
 import 'package:flutter/foundation.dart';
@@ -77,7 +78,7 @@ class HomeScreen extends StatelessWidget {
                       )
                     ],
                   ),
-                  const Row(
+                   Row(
                     children: [
                       Row(
                         children: [
@@ -94,11 +95,22 @@ class HomeScreen extends StatelessWidget {
                               SizedBox(
                                 height: 5,
                               ),
-                              Text("Send Location",
-                                  style: TextStyle(
-                                    color: ColorsValue.secondary,
-                                    fontSize: 14,
-                                  )),
+                             InkWell(
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SendMessagePage()),
+    );
+  },
+  child: Text(
+    "Send Location",
+    style: TextStyle(
+      color: ColorsValue.secondary,
+      fontSize: 14,
+    ),
+  ),
+)
+
                             ],
                           ),
                           SizedBox(
