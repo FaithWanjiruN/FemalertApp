@@ -40,63 +40,90 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color(0xFFCB2B93),
-              Color(0xFF9546C4),
-              Color(0xFF5E61F4)
-            ],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-          ),
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    body: Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height,
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            Color(0xFFCB2B93),
+            Color(0xFF9546C4),
+            Color(0xFF5E61F4)
+          ],
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
         ),
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(
-                20, MediaQuery.of(context).size.height * 0.2, 20, 0),
-            child: Column(
-              children: <Widget>[
-                logoWidget("assets/images/logo1.png"),
-                const SizedBox(
-                  height: 30,
-                ),
-                customTextField(
-                  "Enter UserName",
-                  Icons.person_outline,
-                  false,
-                  _emailTextController,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                customTextField(
-                  "Enter Password",
-                  Icons.lock_outline,
-                  true,
-                  _passwordTextController,
-                ),
-                const SizedBox(
-                  height: 5,
-                ),
-                forgetPassword(context),
-                firebaseButton(context, "Sign In", () {
-                  signIn(context);
-                }),
-                signUpOption(),
-              ],
-            ),
+      ),
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(
+              20, MediaQuery.of(context).size.height * 0.2, 20, 0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center, // Center vertically
+            children: <Widget>[
+              const Column(
+                children: [
+                  Text(
+                    "Welcome to",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                  Text(
+                    "FemAlert",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 40,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Poppins',
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              logoWidget("assets/images/logo1.png"),
+              const SizedBox(
+                height: 40,
+              ),
+              customTextField(
+                "Enter email",
+                Icons.person_outline,
+                false,
+                _emailTextController,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              customTextField(
+                "Enter Password",
+                Icons.lock_outline,
+                true,
+                _passwordTextController,
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              forgetPassword(context),
+              firebaseButton(context, "Sign In", () {
+                signIn(context);
+              }),
+              signUpOption(),
+            ],
           ),
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 
   Row signUpOption() {
     return Row(

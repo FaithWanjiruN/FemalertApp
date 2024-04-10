@@ -1,18 +1,13 @@
 name: femalert2
 description: "A new Flutter project."
-
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
-
 version: 1.0.0+1
-
 environment:
   sdk: ">=3.3.3 <4.0.0"
-
 dependencies:
   flutter:
     sdk: flutter
   flutter_inappwebview: ^5.3.2
-
   cupertino_icons: ^1.0.6
   provider: ^6.1.2
   firebase_core: ^2.28.0
@@ -27,14 +22,19 @@ dependencies:
   android_path_provider: ^0.3.0
   shared_preferences: ^2.2.0
   location: ^6.0.1
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^3.0.0
-
 flutter:
   uses-material-design: true
   assets:
     - assets/images/
+  fonts:
+    - family: PoppinsS
+      fonts:
+        - asset: fonts/Poppins-Regular.ttf
+        - asset: fonts/Poppins-Bold.ttf
+          weight: 700
+        - asset: fonts/Poppins-Italic.ttf
+          style: italic
